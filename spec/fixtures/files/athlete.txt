@@ -4,5 +4,6 @@
 "attributes" => {
 "name" => "#{athlete.name}",
 "age" => athlete.age,
-"home" => "#{athlete.home}"
+"home" => "#{athlete.home}",
+"start-time" => athlete.start_time
 }}}

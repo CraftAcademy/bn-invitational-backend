@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2018_04_03_160357) do
     t.integer "age"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.time "start_time"
+    t.string "start_time"
     t.boolean "has_raced", default: false
   end
 

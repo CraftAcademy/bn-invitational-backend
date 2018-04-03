@@ -1,3 +1,3 @@
 class Athlete::ShowSerializer < ActiveModel::Serializer
-  attributes :name, :home, :age
+  attributes :name, :age, :home, :start_time
 end
