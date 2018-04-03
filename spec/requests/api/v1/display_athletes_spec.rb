@@ -6,7 +6,6 @@ RSpec.describe Api::V1::AthletesController, type: :request do
 
     it 'Should return a list of all athletes' do
       get '/api/v1/athletes'
-      binding.pry
       expected_response = eval(file_fixture('athlete_list.txt').read)
       expect(object).to eq expected_response
     end
