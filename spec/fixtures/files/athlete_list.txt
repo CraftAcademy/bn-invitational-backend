@@ -3,6 +3,5 @@
 "type" => "athletes",
 "attributes" => {
 "name" => "#{athlete.name}",
-"age" => athlete.age,
-"home" => "#{athlete.home}"
+"link" => "http://localhost:3000/#{athlete.id}"
 }}]}
