@@ -3,5 +3,5 @@
 "type" => "athletes",
 "attributes" => {
 "name" => "#{athlete.name}",
-"link" => "http://localhost:3000/#{athlete.id}"
+"link" => "https://votingapi.herokuapp.com/#{athlete.id}"
 }}]}
