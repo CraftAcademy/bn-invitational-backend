@@ -11,12 +11,12 @@ gem 'rails', '~> 5.2.0.rc2'
 
 
 group :development, :test do
+  gem 'coveralls', require: false
   gem 'factory_bot_rails'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'shoulda-matchers'
   gem 'rspec-rails'
-  gem 'coveralls', require: false
 end
 
 group :development do
