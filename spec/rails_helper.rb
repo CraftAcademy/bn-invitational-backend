@@ -1,3 +1,6 @@
+require 'coveralls'
+Coveralls.wear!('rails')
+
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
@@ -5,8 +8,6 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'rspec/rails'
 require 'jsonapi/rspec'
 require 'factory_bot'
-require 'coveralls'
-Coveralls.wear!('rails')
 
 ActiveRecord::Migration.maintain_test_schema!
 

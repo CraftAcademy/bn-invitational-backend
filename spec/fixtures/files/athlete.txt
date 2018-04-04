@@ -1,0 +1,9 @@
+{"data" => {
+"id" => "#{athlete.id}",
+"type" => "athletes",
+"attributes" => {
+"name" => "#{athlete.name}",
+"age" => athlete.age,
+"home" => "#{athlete.home}",
+"start-time" => athlete.start_time
+}}}

@@ -35,6 +35,7 @@ module Nbinvitational
                  max_age: 0
       end
     end
+    routes.default_url_options[:host] = 'https://votingapi.herokuapp.com'
     config.api_only = true
   end
 end
