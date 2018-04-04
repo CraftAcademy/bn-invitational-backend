@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2018_04_04_095324) do
   create_table "results", force: :cascade do |t|
     t.bigint "athlete_id"
     t.float "score"
-    t.integer "rating_collection"
+    t.integer "rating_collection", array: true
     t.integer "number_of_votes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
