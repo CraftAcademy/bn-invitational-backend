@@ -10,14 +10,14 @@ RSpec.describe Api::V1::AthletesController, type: :request do
         vote: 10.0
        }
 
-      expect(object).to eq 'Thank you for your vote.'
+      expect(object).to eq 'Thank you for casting your vote!'
     end
 
     it 'should update an athletes score' do
       put "/api/v1/athletes/#{athlete.id}", params: {
         vote: 10.0
       }
-      
+
       result = Result.first
       expect(result.score).to eq 10.0
     end

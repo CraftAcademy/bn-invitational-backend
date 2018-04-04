@@ -19,6 +19,4 @@ RSpec.describe Api::V1::AthletesController, type: :request do
       expect(object).to eq 'Please fill in all fields.'
     end
   end
-
-
 end
