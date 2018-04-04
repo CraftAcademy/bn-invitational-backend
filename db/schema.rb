@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_04_095324) do
+ActiveRecord::Schema.define(version: 2018_04_04_125327) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2018_04_04_095324) do
     t.integer "number_of_votes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "valid_score", default: false
     t.index ["athlete_id"], name: "index_results_on_athlete_id"
   end
 
