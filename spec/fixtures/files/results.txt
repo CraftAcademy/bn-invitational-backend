@@ -1,8 +1,25 @@
 {"data" => [{
+"id" => "#{result_2.id}",
+"type" => "results",
+"attributes" => {
+"athlete-name" => "Holger Tidemand",
+"score" => result_2.score,
+"number-of-votes" => result_2.number_of_votes
+}},
+{
 "id" => "#{result.id}",
 "type" => "results",
 "attributes" => {
-"athlete-name" => "#{result.athlete.name}",
+"athlete-name" => "Lara",
 "score" => result.score,
 "number-of-votes" => result.number_of_votes
-}}]}
+}},
+{
+"id" => "#{result_3.id}",
+"type" => "results",
+"attributes" => {
+"athlete-name" => "Kalle",
+"score" => result_3.score,
+"number-of-votes" => result_3.number_of_votes
+}}
+]}

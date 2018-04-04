@@ -1,8 +1,7 @@
 class Api::V1::ResultsController < ApplicationController
     def index
       results = Result.all
-      results.sort_by {|result| result.score}
-      binding.pry
-      render json: results, status: :ok
+      sorted_results = results.sort_by {|result| result[:score]}.reverse
+      render json: sorted_results, status: :ok
     end
 end
