@@ -3,5 +3,5 @@
 "type" => "athletes",
 "attributes" => {
 "name" => "#{athlete.name}",
-"link" => "https://votingapi.herokuapp.com/#{athlete.id}"
+"link" => "https://votingapi.herokuapp.com/api/v1/athletes/#{athlete.id}"
 }}]}
