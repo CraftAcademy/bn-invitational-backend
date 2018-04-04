@@ -14,4 +14,10 @@ RSpec.describe Athlete, type: :model do
       expect(create(:athlete).valid?).to eq true
     end
   end
+
+  describe 'validations' do
+    it {is_expected.to validate_presence_of :name}
+    it {is_expected.to validate_presence_of :age}
+    it {is_expected.to validate_presence_of :home}
+  end
 end
