@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_03_160357) do
+ActiveRecord::Schema.define(version: 2018_04_04_095324) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,4 +25,15 @@ ActiveRecord::Schema.define(version: 2018_04_03_160357) do
     t.boolean "has_raced", default: false
   end
 
+  create_table "results", force: :cascade do |t|
+    t.bigint "athlete_id"
+    t.float "score"
+    t.integer "rating_collection"
+    t.integer "number_of_votes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["athlete_id"], name: "index_results_on_athlete_id"
+  end
+
+  add_foreign_key "results", "athletes"
 end
