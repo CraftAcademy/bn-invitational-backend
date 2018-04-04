@@ -1,0 +1,8 @@
+{"data" => [{
+"id" => "#{result.id}",
+"type" => "results",
+"attributes" => {
+"athlete-name" => "#{result.athlete.name}",
+"score" => result.score,
+"number-of-votes" => result.number_of_votes
+}}]}
