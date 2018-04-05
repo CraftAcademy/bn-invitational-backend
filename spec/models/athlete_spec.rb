@@ -14,4 +14,11 @@ RSpec.describe Athlete, type: :model do
       expect(create(:athlete).valid?).to eq true
     end
   end
+
+  describe 'Attachment' do
+    it 'is valid  ' do
+      subject.image.attach(io: File.open(fixture_path + '/dummy_image.jpg'), filename: 'attachment.jpg', content_type: 'image/jpg')
+      expect(subject.image).to be_attached
+    end
+  end
 end
