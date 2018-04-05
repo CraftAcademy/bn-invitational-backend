@@ -15,6 +15,7 @@ class Api::V1::AthletesController < ApplicationController
   def create
     athlete = Athlete.new(athlete_params)
     if athlete.save
+      Result.create(athlete: athlete)
       render_message('Athlete successfully created!')
     else
       render_message('Please fill in all fields.')
