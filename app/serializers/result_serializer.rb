@@ -3,6 +3,6 @@ class ResultSerializer < ActiveModel::Serializer
 
   def athlete_name
     athlete = Athlete.find_by(id: object.athlete_id)
-    return athlete.name
+    athlete.name
   end
 end
