@@ -8,6 +8,6 @@ class Api::V1::ResultsController < ApplicationController
     results = Result.all
     sorted_results = results.sort_by { |result| result[:score] }.reverse
     sorted_results.each { |result| result.valid_score = true if result.number_of_votes > 4 }
-    return sorted_results
+    sorted_results
   end
 end

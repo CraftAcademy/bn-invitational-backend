@@ -5,7 +5,7 @@ RSpec.describe Athlete, type: :model do
     it {is_expected.to have_db_column :name}
     it {is_expected.to have_db_column :home}
     it {is_expected.to have_db_column :age}
-    it {is_expected.to have_db_column :start_time}
+    it {is_expected.to have_db_column :starttime}
     it {is_expected.to have_db_column :has_raced}
   end
 
@@ -14,6 +14,11 @@ RSpec.describe Athlete, type: :model do
       expect(create(:athlete).valid?).to eq true
     end
   end
+
+  describe 'validations' do
+    it {is_expected.to validate_presence_of :name}
+    it {is_expected.to validate_presence_of :age}
+    it {is_expected.to validate_presence_of :home}
 
   describe 'Attachment' do
     it 'is valid  ' do

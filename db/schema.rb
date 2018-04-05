@@ -42,15 +42,15 @@ ActiveRecord::Schema.define(version: 2018_04_05_180045) do
     t.integer "age"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "start_time"
+    t.string "starttime"
     t.boolean "has_raced", default: false
   end
 
   create_table "results", force: :cascade do |t|
     t.bigint "athlete_id"
-    t.float "score"
-    t.integer "rating_collection", array: true
-    t.integer "number_of_votes"
+    t.float "score", default: 0.0
+    t.float "rating_collection", default: [], array: true
+    t.float "number_of_votes", default: 0.0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "valid_score", default: false

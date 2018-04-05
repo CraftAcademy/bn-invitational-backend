@@ -3,6 +3,6 @@ FactoryBot.define do
     name "Holger Tidemand"
     home "Onsala"
     age 26
-    start_time "13:37"
+    starttime "1337"
   end
 end
