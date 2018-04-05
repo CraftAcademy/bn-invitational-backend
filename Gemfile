@@ -8,6 +8,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'rack-cors', require: 'rack/cors'
 gem 'rails', '~> 5.2.0.rc2'
+gem 'aws-sdk-s3', require: false
 
 
 group :development, :test do
