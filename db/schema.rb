@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2018_04_04_125327) do
     t.bigint "athlete_id"
     t.float "score", default: 0.0
     t.integer "rating_collection", default: [], array: true
-    t.integer "number_of_votes", default: 0
+    t.float "number_of_votes", default: 0.0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "valid_score", default: false
