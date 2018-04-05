@@ -5,4 +5,7 @@ class AthleteSerializer < ActiveModel::Serializer
   def link
     api_v1_athlete_url(object)
   end
+  def image
+    object.image.attachment.blob.service_url if object.image.service_url
+  end
 end

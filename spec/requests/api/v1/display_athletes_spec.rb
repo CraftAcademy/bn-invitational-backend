@@ -3,10 +3,12 @@ RSpec.describe Api::V1::AthletesController, type: :request do
   describe 'GET /api/v1/athletes' do
     let!(:athlete) { create(:athlete) }
     let(:object) { JSON.parse(response.body)}
+    before do
+      athlete.image.attach(io: File.open(fixture_path + '/dummy_image.jpg'), filename: 'attachment.jpg', content_type: 'image/jpg')
+    end
 
     it 'Should return a list of all athletes' do
       get '/api/v1/athletes'
-      binding.pry
       expected_response = eval(file_fixture('athlete_list.txt').read)
       expect(object).to eq expected_response
     end
