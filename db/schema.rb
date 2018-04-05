@@ -28,8 +28,13 @@ ActiveRecord::Schema.define(version: 2018_04_04_125327) do
   create_table "results", force: :cascade do |t|
     t.bigint "athlete_id"
     t.float "score", default: 0.0
+<<<<<<< HEAD
     t.float "rating_collection", default: [], array: true
     t.integer "number_of_votes", default: 0
+=======
+    t.integer "rating_collection", default: [], array: true
+    t.float "number_of_votes", default: 0.0
+>>>>>>> aed6e4b08d343a14f0af2ff97390873b751d263c
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "valid_score", default: false
