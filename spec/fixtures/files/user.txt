@@ -1,0 +1,10 @@
+{"data"=>
+  {"id"=>user.id,
+   "email"=>"#{user.email}",
+   "provider"=>"email",
+   "uid"=>"#{user.uid}",
+   "allow_password_change"=>false,
+   "name"=>nil,
+   "nickname"=>nil,
+   "image"=>nil,
+   "type"=>"user"}}
