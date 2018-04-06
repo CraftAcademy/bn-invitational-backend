@@ -22,6 +22,12 @@ class Api::V1::AthletesController < ApplicationController
     end
   end
 
+  def destroy
+    athlete = Athlete.find_by(id: params[:id])
+    athlete.destroy
+    render json: { status: 'Athlete successfully deleted!' }
+  end
+
   private
 
   def athlete_params
