@@ -4,8 +4,7 @@ RSpec.describe Api::V1::AthletesController, type: :request do
     let!(:athlete) { create(:athlete) }
     let(:object) { JSON.parse(response.body) }
     before do
-      #  athlete.image.attach(io: File.open(fixture_path + '/dummy_image.jpg'), filename: 'attachment.jpg', content_type: 'image/jpg')
-    end
+  end
 
     it 'Should return a list of all athletes' do
       get '/api/v1/athletes'
@@ -21,22 +20,7 @@ RSpec.describe Api::V1::AthletesController, type: :request do
     it 'GET /api/v1/athletes' do
       athlete.image.attach(io: File.open(fixture_path + '/dummy_image.jpg'), filename: 'attachment.jpg', content_type: 'image/jpg')
         get "/api/v1/athletes/#{athlete.id}"
-        binding.pry
-       expect(object).to have_attribute(:image)
+       expect(object['data']).to have_attribute(:image)
      end
   end
-
-    #describe 'should have an image' do
-    #  let!(:athlete) { create(:athlete) }
-    #  let(:object) { JSON.parse(response.body) }
-    #  before do
-    #    athlete.image.attach(io: File.open(fixture_path + '/dummy_image.jpg'), filename: 'attachment.jpg', content_type: 'image/jpg')
-    #  end
-
-  # it 'GET /api/v1/athletes' do
-  #     get "/api/v1/athletes/#{athlete.id}"
-  #     binding.pry
-  #    expect(object).to have_attribute(:image)
-  #  end
-#  end
 end
