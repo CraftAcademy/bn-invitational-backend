@@ -6,7 +6,8 @@ class AthleteSerializer < ActiveModel::Serializer
     api_v1_athlete_url(object)
   end
   def image
-    if !object.image.attachment.nil?
+    unless object.image.attachment.nil?
+      binding.pry
       object.image.service_url(expires_in: 1.hour, disposition: 'inline')
     end
   end

@@ -12,7 +12,7 @@ RSpec.describe Result, type: :model do
       athlete = create(:athlete)
       expect(create(:result, athlete: athlete).valid?).to eq true
     end
-  end 
+  end
 
     describe 'Assosiation' do
       it {is_expected.to belong_to :athlete}

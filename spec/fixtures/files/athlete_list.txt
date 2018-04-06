@@ -5,5 +5,5 @@
 "name" => "#{athlete.name}",
 "link" => "https://votingapi.herokuapp.com/api/v1/athletes/#{athlete.id}",
 "home" => "#{athlete.home}",
-"image" => athlete.image.service_url
+"image" => nil
 }}]}
