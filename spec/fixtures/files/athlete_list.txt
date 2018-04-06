@@ -4,5 +4,6 @@
 "attributes" => {
 "name" => "#{athlete.name}",
 "link" => "https://votingapi.herokuapp.com/api/v1/athletes/#{athlete.id}",
-"home" => "#{athlete.home}"
+"home" => "#{athlete.home}",
+"image" => nil
 }}]}

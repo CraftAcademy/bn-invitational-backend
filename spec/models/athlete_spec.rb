@@ -20,4 +20,11 @@ RSpec.describe Athlete, type: :model do
     it {is_expected.to validate_presence_of :age}
     it {is_expected.to validate_presence_of :home}
   end
+
+  describe 'Attachment' do
+    it 'is valid ' do
+      subject.image.attach(io: File.open(fixture_path + '/dummy_image.jpg'), filename: 'attachment.jpg', content_type: 'image/jpg')
+      expect(subject.image).to be_attached
+    end
+  end
 end

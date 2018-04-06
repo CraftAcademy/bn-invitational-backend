@@ -1,3 +1,9 @@
 class Athlete::ShowSerializer < ActiveModel::Serializer
-  attributes :name, :age, :home, :starttime
+  attributes :name, :age, :home, :starttime, :image
+
+  def image
+    unless object.image.attachment.nil?
+      object.image.service_url(expires_in: 1.hour, disposition: 'inline')
+    end
+  end
 end
