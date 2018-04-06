@@ -17,7 +17,7 @@ RSpec.describe Api::V1::AthletesController, type: :request do
       expected_response = eval(file_fixture('athlete.txt').read)
       expect(object).to eq expected_response
     end
-    it 'GET /api/v1/athletes' do
+    it 'should return athletes image' do
       athlete.image.attach(io: File.open(fixture_path + '/dummy_image.jpg'), filename: 'attachment.jpg', content_type: 'image/jpg')
         get "/api/v1/athletes/#{athlete.id}"
        expect(object['data']).to have_attribute(:image)
