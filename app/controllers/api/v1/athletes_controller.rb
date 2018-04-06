@@ -9,10 +9,12 @@ class Api::V1::AthletesController < ApplicationController
   end
 
   def update
-    if @athlete.update(athlete_params)
-      render json: { status: 'Athlete updated successfully!' }
-    elsif @result.updated_votes(params)
+    if params[:vote]
+      @result.updated_votes(params)
       render json: { status: 'Thank you for casting your vote!' }
+    else
+      @athlete.update(athlete_params)
+      render json: { status: 'Athlete updated successfully!' }
     end
   end
 
