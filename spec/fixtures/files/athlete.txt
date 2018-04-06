@@ -5,5 +5,6 @@
 "name" => "#{athlete.name}",
 "age" => athlete.age,
 "home" => "#{athlete.home}",
-"starttime" => athlete.starttime
+"starttime" => athlete.starttime,
+"image" => nil
 }}}

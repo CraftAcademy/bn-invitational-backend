@@ -21,6 +21,7 @@ RSpec.describe Api::V1::AthletesController, type: :request do
     it 'GET /api/v1/athletes' do
       athlete.image.attach(io: File.open(fixture_path + '/dummy_image.jpg'), filename: 'attachment.jpg', content_type: 'image/jpg')
         get "/api/v1/athletes/#{athlete.id}"
+        binding.pry
        expect(object).to have_attribute(:image)
      end
   end
