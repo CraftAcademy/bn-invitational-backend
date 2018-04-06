@@ -9,6 +9,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'rack-cors', require: 'rack/cors'
 gem 'rails', '~> 5.2.0.rc2'
+gem 'devise_token_auth'
 
 group :development, :test do
   gem 'coveralls', require: false
