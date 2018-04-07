@@ -1,6 +1,8 @@
 class Api::V1::AthletesController < ApplicationController
+
   before_action :find_athlete_and_result
   before_action :authenticate_api_v1_user!, only: [:create, :destroy]
+
   def index
     render json: @athletes, status: :ok
   end
@@ -10,7 +12,7 @@ class Api::V1::AthletesController < ApplicationController
   end
 
   def update
-    render json: { status: 'Thank you for casting your vote!' } if @result.updated_votes(params)
+    render_message('Thank you for casting your vote!') if @result.updated_votes(params)
   end
 
   def create
@@ -26,7 +28,7 @@ class Api::V1::AthletesController < ApplicationController
   def destroy
     athlete = Athlete.find_by(id: params[:id])
     athlete.destroy
-    render json: { status: 'Athlete successfully deleted!' }
+    render_message('Athlete successfully deleted!')
   end
 
   private
