@@ -1,7 +1,7 @@
 class Api::V1::AthletesController < ApplicationController
 
   before_action :find_athlete_and_result
-  before_action :authenticate_api_v1_user!, only: [:create, :destroy]
+  before_action :authenticate_api_v1_user!, only: [:create, :destroy, :edit]
 
   def index
     render json: @athletes, status: :ok
