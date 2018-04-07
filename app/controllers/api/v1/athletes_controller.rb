@@ -16,7 +16,7 @@ class Api::V1::AthletesController < ApplicationController
   end
 
   def edit
-    render json: { status: 'Athlete updated successfully!' } if @athlete.update(athlete_params)
+    render_message('Athlete updated successfully!')  if @athlete.update(athlete_params)
   end
 
   def create
