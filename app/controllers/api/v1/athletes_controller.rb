@@ -15,6 +15,10 @@ class Api::V1::AthletesController < ApplicationController
     render_message('Thank you for casting your vote!') if @result.updated_votes(params)
   end
 
+  def edit
+    render json: { status: 'Athlete updated successfully!' } if @athlete.update(athlete_params)
+  end
+
   def create
     athlete = Athlete.new(athlete_params)
     if athlete.save
