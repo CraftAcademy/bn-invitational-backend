@@ -10,7 +10,8 @@ Feature: Admin is able to create a new athlete
     When I fill in "Name" with "Holger"
     And I fill in "Home" with "Göteborg"
     And I fill in "Age" with "26"
-    And I fill in "Start Time " with "1337"
+    And I fill in "Starttime" with "1337"
     And I attach a file
-    And I click "Submit" button
+    And I click "Create Athlete" button
+    And show me the page
     Then I should see "Athlete successfully created"
