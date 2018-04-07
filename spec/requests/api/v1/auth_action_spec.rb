@@ -31,7 +31,5 @@ RSpec.describe Api::V1::AthletesController, type: :request do
 
         expect(response_json['errors'].first).to eq 'You need to sign in or sign up before continuing.'
       end
-
-
     end
 end
