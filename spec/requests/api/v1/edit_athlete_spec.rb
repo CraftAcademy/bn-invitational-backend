@@ -1,14 +1,17 @@
 RSpec.describe Api::V1::AthletesController, type: :request do
   describe 'get /api/v1/athletes/#{athlete.id}/edit' do
     let!(:athlete) { create(:athlete) }
-    let(:document) { JSON.parse(response.body)}
-    let(:object) {document['status']}
+    let(:response_json) { JSON.parse(response.body)}
+    let!(:user) { create(:user) }
+    let(:credentials) { user.create_new_auth_token }
+    let(:headers) { { HTTP_ACCEPT: 'application/json' }.merge!(credentials) }
 
     it 'Should return success message if athlete is edited' do
       get "/api/v1/athletes/#{athlete.id}/edit", params: {
         name: 'Lara Thordardottir', age: 66, home: 'Reykjavik'
-       }
-      expect(object).to eq 'Athlete updated successfully!'
+      }, headers: headers
+
+      expect(response_json['status']).to eq 'Athlete updated successfully!'
     end
   end
 end
