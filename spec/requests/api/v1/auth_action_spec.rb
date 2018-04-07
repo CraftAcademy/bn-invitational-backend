@@ -18,6 +18,14 @@ RSpec.describe Api::V1::AthletesController, type: :request do
          expect(response_json['errors'].first).to eq 'You need to sign in or sign up before continuing.'
       end
 
+      it 'should return error for edit' do
+        get "/api/v1/athletes/#{athlete.id}/edit", params: {
+          name: 'Lara Thordardottir', age: 66, home: 'Reykjavik'
+         }
+
+        expect(response_json['errors'].first).to eq 'You need to sign in or sign up before continuing.'
+      end
+
 
     end
 end
