@@ -1,7 +1,7 @@
 RSpec.describe Api::V1::AthletesController, type: :request do
   describe 'POST /api/v1/athletes' do
-    let(:document) { JSON.parse(response.body)}
-    let(:object) {document['status']}
+    let(:document) { JSON.parse(response.body) }
+    let(:object) { document['status'] }
     let!(:user) { create(:user) }
     let(:credentials) { user.create_new_auth_token }
     let(:headers) { { HTTP_ACCEPT: 'application/json' }.merge!(credentials) }
@@ -26,7 +26,7 @@ RSpec.describe Api::V1::AthletesController, type: :request do
       post '/api/v1/athletes', params: {
         name: 'Holger Tidemand', age: 26
       }, headers: headers
-      expect(object).to eq 'Plea  se fill in all fields.'
+      expect(object).to eq 'Please fill in all fields.'
     end
   end
 end
