@@ -1,6 +1,6 @@
 RSpec.describe User, type: :model do
   describe 'Factory' do
-    it "should be vaild" do
+    it "should be valid" do
       expect(create(:user).valid?).to eq true
     end
 

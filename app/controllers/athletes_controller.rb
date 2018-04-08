@@ -1,4 +1,5 @@
 class AthletesController < ActionController::Base
+  
   def create
     athlete = Athlete.new(athlete_params)
     if athlete.save
