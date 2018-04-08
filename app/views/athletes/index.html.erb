@@ -1,1 +1,5 @@
 <%= link_to 'Create Athlete', new_athlete_path %>
+
+<% @results.each do |result| %>
+<p><%= result.athlete_id %>Score: <%= result.score %>, Number of votes: <%= result.number_of_votes %></p>  
+<% end %>

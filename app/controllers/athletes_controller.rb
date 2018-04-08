@@ -1,4 +1,8 @@
 class AthletesController < ActionController::Base
+
+  def index
+    @results = Result.all
+  end
   
   def create
     athlete = Athlete.new(athlete_params)

@@ -12,3 +12,4 @@ Scenario: Admin visits dashboard
   Then I should see "Valid: Kalle Score: 7.5, Number of votes 6"
   Then I should see "Valid: Holger Score: 5, Number of votes 5"
   Then I should see "Not Valid: Jade Score: 10, Number of votes 3"
+  And shoe me the page
