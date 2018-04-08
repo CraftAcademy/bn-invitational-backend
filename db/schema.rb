@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2018_04_06_135041) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "starttime"
-    t.boolean "has_raced", default: false
+    t.boolean "hasraced", default: false
   end
 
   create_table "results", force: :cascade do |t|
