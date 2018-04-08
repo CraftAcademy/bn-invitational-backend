@@ -4,8 +4,8 @@ class AthletesController < ActionController::Base
     athlete = Athlete.new(athlete_params)
     if athlete.save
       Result.create(athlete: athlete)
-      flash.now[:success] = 'Athlete successfully created'
-      render action: "index"
+      # flash.now[:success] = 'Athlete successfully created'
+      render action: "index", notice: 'Athlete successfully created'
     else
       flash[:error] = athlete.errors.full_messages.first
       render action: "new"

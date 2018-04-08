@@ -15,13 +15,12 @@ Feature: Admin is able to edit and delete information about athletes
     And I fill in "Home" with "Stockholm"
     And I fill in "Age" with "300"
     And I fill in "Starttime" with "1337"
-    And show me the page
     And I attach a file
-    And I click "Submit" button
-    Then I should see "Athlete successfully edited"
+    And I click "Update Athlete" button
     And I should see "David"
     And I should see "Stockholm"
     And I should see "300"
+    And show me the page
 
   Scenario: Admin successfully deletes an athlete
     Given I am on the "Holger" page

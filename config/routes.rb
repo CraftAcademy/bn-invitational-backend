@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root controller: :athletes, action: :index
   resources :athletes
+  match '/athletes/:id', to: "athletes#update", via: [:get, :post]
   namespace :api do
     namespace :v1 do
       resources :athletes, except: [:new]
