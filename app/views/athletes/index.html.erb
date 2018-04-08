@@ -1,1 +1,32 @@
 <%= link_to 'Create Athlete', new_athlete_path %>
+
+<h3>Results</h3>
+
+<% if @sorted_results %>
+  <% position = 1 %>
+  <% @sorted_results.each do |result| %>
+    <% if result.valid_score == true %>
+      <p>
+      No. <%= position %>
+      <%= result.athlete.name %>
+      Score: <%= result.score %>,
+      Number of votes: <%= result.number_of_votes %>
+      </p>
+      <% position += 1 %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h3>Insufficient votes</h3>
+
+<% if @sorted_results %>
+  <% @sorted_results.each do |result| %>
+    <% if result.valid_score == false %>
+      <p>
+      <%= result.athlete.name %>
+      Score: <%= result.score %>,
+       Number of votes: <%= result.number_of_votes %>
+      </p>
+    <% end %>
+  <% end %>
+<% end %>
