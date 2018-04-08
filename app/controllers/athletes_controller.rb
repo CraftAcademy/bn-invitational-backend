@@ -4,10 +4,10 @@ class AthletesController < ActionController::Base
     if athlete.save
       Result.create(athlete: athlete)
       flash.now[:success] = 'Athlete successfully created'
-      render action: "new"
+      render action: "index"
     else
-      flash[:error] = 'Something went wrong'
-      redirect_back(fallback_location: root_path)
+      flash[:error] = athlete.errors.full_messages.first
+      render action: "new"
     end
   end
 

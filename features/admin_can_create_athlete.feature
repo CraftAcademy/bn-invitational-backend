@@ -13,5 +13,15 @@ Feature: Admin is able to create a new athlete
     And I fill in "Starttime" with "1337"
     And I attach a file
     And I click "Create Athlete" button
-    And show me the page
     Then I should see "Athlete successfully created"
+
+    Scenario: Admin successfully creates new athlete
+      Given I am on the "Dashboard" page
+      When I click "Create Athlete" button
+      Then I should be on the "Create Athlete" page
+      When I fill in "Name" with "Holger"
+      And I fill in "Home" with "Göteborg"
+      And I fill in "Starttime" with "1337"
+      And I attach a file
+      And I click "Create Athlete" button
+      Then I should see "Age can't be blank"
