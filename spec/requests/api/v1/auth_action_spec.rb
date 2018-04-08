@@ -25,11 +25,5 @@ RSpec.describe Api::V1::AthletesController, type: :request do
 
         expect(response_json['errors'].first).to eq 'You need to sign in or sign up before continuing.'
       end
-
-      it 'should return error for index results' do
-        get '/api/v1/results'
-
-        expect(response_json['errors'].first).to eq 'You need to sign in or sign up before continuing.'
-      end
     end
 end
