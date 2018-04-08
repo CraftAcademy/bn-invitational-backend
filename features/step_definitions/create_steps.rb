@@ -1,5 +1,5 @@
 
-Given("the following athlete exists:") do |table|
+Given("the following athlete exists with these results:") do |table|
   table.hashes.each do |athlete|
     create(:athlete, name: athlete[:name])
     find_athlete = Athlete.find_by(name: athlete[:name])
