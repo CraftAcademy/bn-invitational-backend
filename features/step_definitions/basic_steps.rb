@@ -35,3 +35,9 @@ def page_path(path)
     raise "You need to add #{path} to page_path function"
   end
 end
+
+Given("the following athlete exists") do |table|
+  table.hashes.each do |athlete|
+    create(:athlete, athlete)
+  end
+end
