@@ -6,5 +6,6 @@
 "age" => athlete.age,
 "home" => "#{athlete.home}",
 "starttime" => athlete.starttime,
-"image" => nil
+"image" => nil,
+"has-raced" => false
 }}}
