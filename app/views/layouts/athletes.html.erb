@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>B&N Invitational</title>
+    <title>BN Invitational</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,10 +9,6 @@
   </head>
 
   <body>
-    <% flash.each do |key, value| %>
-      <%= value  %>
-    <% end %>
-
     <%= yield %>
 
   </body>
