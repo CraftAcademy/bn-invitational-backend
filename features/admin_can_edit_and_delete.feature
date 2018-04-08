@@ -15,8 +15,9 @@ Feature: Admin is able to edit and delete information about athletes
     And I fill in "Home" with "Stockholm"
     And I fill in "Age" with "300"
     And I fill in "Starttime" with "1337"
+    And show me the page
     And I attach a file
-    And I click "Edit Athlete" button
+    And I click "Submit" button
     Then I should see "Athlete successfully edited"
     And I should see "David"
     And I should see "Stockholm"

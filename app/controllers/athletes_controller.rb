@@ -16,6 +16,21 @@ class AthletesController < ActionController::Base
     @athlete = Athlete.find_by(id: params[:id])
   end
 
+  def edit
+    @athlete = Athlete.find_by(id: params[:id])
+  end
+
+  def update
+    @athlete = Athlete.find_by(id: params[:id])
+    if @athlete.update(athlete_params)
+     flash.now[:success] = 'Athlete successfully edited'
+     render action: "show"
+    else
+     flash[:error] = error_message(@athlete)
+     render 'edit'
+    end
+  end
+
   private
 
   def athlete_params
