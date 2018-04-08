@@ -20,10 +20,8 @@ Feature: Admin is able to edit and delete information about athletes
     And I should see "David"
     And I should see "Stockholm"
     And I should see "300"
-    And show me the page
 
   Scenario: Admin successfully deletes an athlete
     Given I am on the "Holger" page
     When I click "Delete Athlete" button
     Then I should be on the "Dashboard" page
-    And I should see "Athlete has been deleted"

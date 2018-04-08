@@ -20,6 +20,12 @@ class AthletesController < ActionController::Base
     @athlete = Athlete.find_by(id: params[:id])
   end
 
+  def destroy
+    @athlete = Athlete.find_by(id: params[:id])
+    @athlete.destroy
+    redirect_to root_path
+  end
+
   def update
     @athlete = Athlete.find_by(id: params[:id])
     if @athlete.update(athlete_params)

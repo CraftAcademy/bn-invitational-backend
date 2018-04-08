@@ -8,3 +8,4 @@
 <p> Race Time: <%= @athlete.starttime %> </p>
 
 <%= link_to 'Edit', edit_athlete_path(@athlete) %>
+<%= link_to 'Delete Athlete', athlete_path(@athlete), method: :delete %>

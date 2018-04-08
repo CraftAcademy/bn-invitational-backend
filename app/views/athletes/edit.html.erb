@@ -1,6 +1,6 @@
 <h1>Edit Athlete</h1>
 
-<%= form_with model: @athlete, local: true do |form| %>
+<%= form_with model: @athlete, method: :update, local: true do |form| %>
   <%= form.label :name %>
   <%= form.text_field :name, value: @athlete.name %>
   <%= form.label :home %>
