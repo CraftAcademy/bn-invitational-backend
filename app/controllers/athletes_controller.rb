@@ -24,7 +24,7 @@ class AthletesController < ActionController::Base
     @athlete = Athlete.find_by(id: params[:id])
     if @athlete.update(athlete_params)
      flash.now[:success] = 'Athlete successfully edited'
-     render action: "show"
+     redirect_to athlete_path(@athlete)
     else
      flash[:error] = error_message(@athlete)
      render 'edit'

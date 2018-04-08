@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root controller: :athletes, action: :index
-  resources :athletes, only: [:index, :new, :create, :show, :edit]
+  resources :athletes
   namespace :api do
     namespace :v1 do
       resources :athletes, except: [:new]
