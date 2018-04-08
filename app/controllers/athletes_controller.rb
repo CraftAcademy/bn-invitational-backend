@@ -1,5 +1,5 @@
 class AthletesController < ActionController::Base
-  
+
   def create
     athlete = Athlete.new(athlete_params)
     if athlete.save
@@ -10,6 +10,10 @@ class AthletesController < ActionController::Base
       flash[:error] = athlete.errors.full_messages.first
       render action: "new"
     end
+  end
+
+  def show
+    @athlete = Athlete.find_by(id: params[:id])
   end
 
   private

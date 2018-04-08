@@ -1,3 +1,9 @@
+Given("the following athlete exists") do |table|
+  table.hashes.each do |athlete|
+    create(:athlete, athlete)
+  end
+end
+
 Given("I am on the {string} page") do |page_name|
   visit page_path(page_name)
 end
@@ -26,11 +32,14 @@ When("show me the page") do
   save_and_open_page
 end
 
-def page_path(path)
-  if path == 'Dashboard'
+def page_path(path_name)
+  if path_name == 'Dashboard'
     root_path
-  elsif path == 'Create Athlete'
+  elsif path_name == 'Create Athlete'
     new_athlete_path
+  elsif path_name == 'Holger'
+    athlete_id = Athlete.find_by(name: path_name)
+    athlete_path(athlete_id)
   else
     raise "You need to add #{path} to page_path function"
   end

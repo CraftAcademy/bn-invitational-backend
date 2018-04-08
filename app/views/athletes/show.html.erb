@@ -1,0 +1,10 @@
+<h1> <%= @athlete.name %> </h1>
+
+<% if @athlete.image.attachment %>
+  <%= image_tag @athlete.image, width: '250' %>
+<% end %>
+<p> <%= @athlete.home %> </p>
+<p> <%= @athlete.age %> </p>
+<p> <%= @athlete.starttime %> </p>
+
+<%= link_to 'Edit Athlete', edit_athlete_path(@athlete) %>
