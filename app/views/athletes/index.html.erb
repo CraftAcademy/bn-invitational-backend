@@ -1,9 +1,11 @@
 <h1>Athletes</h1>
 
-<% Athlete.all.each do |athlete| %>
-  <athlete id="athlete">
-    <li><%= link_to athlete.name, athlete_path(athlete)%></li>
-  </athlete>
+<% if @athletes %>
+  <ul id="athlete">
+    <% @athletes.each do |athlete| %>
+      <li><%= link_to athlete.name, athletes_path(athlete)%></li>
+    <% end %>
+  </ul>
 <% end %>
 
 <%= link_to 'Create Athlete', new_athlete_path %>
