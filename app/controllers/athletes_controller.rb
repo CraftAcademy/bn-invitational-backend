@@ -2,6 +2,7 @@ class AthletesController < ActionController::Base
 
   def index
     sorted_results
+    @athletes = Athlete.all
   end
 
   def create
