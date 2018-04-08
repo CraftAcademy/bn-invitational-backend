@@ -2,6 +2,7 @@ class AthletesController < ActionController::Base
 
   def index
     sorted_results
+    @athletes = Athlete.all
   end
 
   def create
@@ -14,10 +15,6 @@ class AthletesController < ActionController::Base
       flash[:error] = athlete.errors.full_messages.first
       render action: "new"
     end
-  end
-
-  def index
-    @athletes = Athlete.all
   end
 
   private
