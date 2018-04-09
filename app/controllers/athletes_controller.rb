@@ -21,7 +21,7 @@ class AthletesController < ActionController::Base
   def sorted_results
     results = Result.all
     @sorted_results = results.sort_by { |result| result[:score] }.reverse
-    @sorted_results.each { |result| result.valid_score = true if result.number_of_votes > 4 }
+    @sorted_results.each { |result| result.validscore = true if result.numberofvotes > 4 }
     @sorted_results
   end
 
