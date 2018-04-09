@@ -14,26 +14,3 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree
-
-var apiBase = "https://votingapi.herokuapp.com/api/v1/athletes"
-
-document.getElementById('voting').addEventListner('click', openOrCloseVoting );
-
-// $.ajax({
-//   type: "PUT",
-//   url: "https://votingapi.herokuapp.com/api/v1/athletes/" + this.id,
-//   data: {}
-// }
- function openOrCloseVoting(event) {
-
-    var  athleteId = event.target.id;
-    var  votingState = event.target.value
-      if (votingState == false) {
-         $.ajax({
-          type: "PUT",
-          url: "https://votingapi.herokuapp.com/api/v1/athletes/" + this.id,
-          data: {votingState: true},
-          error: function(res) { console.log(error)}
-        });
-      }
-  }

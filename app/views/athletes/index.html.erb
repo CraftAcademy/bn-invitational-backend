@@ -5,17 +5,19 @@
   <ul id="athlete">
     <% @athletes.each do |athlete| %>
       <li>
-        <p id="<% athlete.id %>">
-        <%= athlete.name%>
-        </p>
-        <button type="button" value="<% athlete.votingOpen %>" name="button"></button>
-        <p> Status <%= athlete.votingOpen %></p>
+        <p><%= athlete.name%></p>
+        <%= form_with url: toggle_voting_path(athlete), method: :put, local: true do |form| %>
+        
+        <%= form.submit value: 'Open/Close Voting', id: 'voting' %>
+        <% end %>
+        Status: <%= athlete.votingOpen %>
       </li>
     <% end %>
   </ul>
 <% end %>
 
 <%= link_to 'Create Athlete', new_athlete_path %>
+
 
 <h3>Results</h3>
 

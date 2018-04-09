@@ -17,14 +17,12 @@ class AthletesController < ApplicationController
     end
   end
 
-  def update
-    binding.pry
-        athlete = Athlete.find(params[:id])
-    athlete.open_or_close_voting
-    redirect_to root_path
-  end
 
-
+def toggle
+  athlete = Athlete.find(params[:id])
+  athlete.open_or_close_voting
+  redirect_to root_path
+end
   private
 
   def sorted_results
