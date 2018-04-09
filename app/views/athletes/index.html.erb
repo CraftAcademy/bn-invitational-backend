@@ -3,7 +3,11 @@
 <% if @athletes %>
   <ul id="athlete">
     <% @athletes.each do |athlete| %>
-      <li><%= link_to athlete.name, athletes_path(athlete)%></li>
+      <li>
+        <p><%= athlete.name%></p>
+        <%= link_to 'Open/Close Voting', api_v1_athlete_url(athlete), method: :put, id: 'voting' %>
+        Status: <%= athlete.votingOpen %>
+      </li>
     <% end %>
   </ul>
 <% end %>
