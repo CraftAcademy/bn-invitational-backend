@@ -4,8 +4,8 @@
 "attributes" => {
 "athlete-name" => "Holger Tidemand",
 "score" => result_2.score,
-"number-of-votes" => result_2.number_of_votes,
-"valid-score" => false
+"numberofvotes" => result_2.number_of_votes,
+"validscore" => false
 }},
 {
 "id" => "#{result.id}",
@@ -13,8 +13,8 @@
 "attributes" => {
 "athlete-name" => "Lara",
 "score" => result.score,
-"number-of-votes" => result.number_of_votes,
-"valid-score" => false
+"numberofvotes" => result.number_of_votes,
+"validscore" => false
 }},
 {
 "id" => "#{result_3.id}",
@@ -22,7 +22,7 @@
 "attributes" => {
 "athlete-name" => "Kalle",
 "score" => result_3.score,
-"number-of-votes" => result_3.number_of_votes,
-"valid-score" => true
+"numberofvotes" => result_3.number_of_votes,
+"validscore" => true
 }}
 ]}
