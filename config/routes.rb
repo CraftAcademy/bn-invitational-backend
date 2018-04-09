@@ -4,9 +4,6 @@ Rails.application.routes.draw do
   resources :athletes
   put 'toggle/:id', to: 'athletes#toggle', as: :toggle_voting
 
-
-
-
   namespace :api do
     namespace :v1 do
       resources :athletes, except: [:new]
