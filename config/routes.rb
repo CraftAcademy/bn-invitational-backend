@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root controller: :athletes, action: :index
 
-  resources :athletes
+  resources :athletes, only: [:index, :create]
   put 'toggle/:id', to: 'athletes#toggle', as: :toggle_voting
 
   namespace :api do
