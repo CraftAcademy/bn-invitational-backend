@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BN Invitational</title>
+    <title></title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,7 +9,11 @@
   </head>
 
   <body>
+    <% flash.each do |key, value| %>
+      <div class="text-center">
+        <%= value  %>
+      </div>
+    <% end %>
     <%= yield %>
-
   </body>
 </html>
