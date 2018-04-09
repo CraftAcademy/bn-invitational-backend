@@ -2,27 +2,27 @@
 "id" => "#{result_2.id}",
 "type" => "results",
 "attributes" => {
-"athletename" => "Holger Tidemand",
+"athlete-name" => "Holger Tidemand",
 "score" => result_2.score,
-"numberofvotes" => result_2.numberofvotes,
-"validscore" => false
+"number-of-votes" => result_2.number_of_votes,
+"valid-score" => false
 }},
 {
 "id" => "#{result.id}",
 "type" => "results",
 "attributes" => {
-"athletename" => "Lara",
+"athlete-name" => "Lara",
 "score" => result.score,
-"numberofvotes" => result.numberofvotes,
-"validscore" => false
+"number-of-votes" => result.number_of_votes,
+"valid-score" => false
 }},
 {
 "id" => "#{result_3.id}",
 "type" => "results",
 "attributes" => {
-"athletename" => "Kalle",
+"athlete-name" => "Kalle",
 "score" => result_3.score,
-"numberofvotes" => result_3.numberofvotes,
-"validscore" => true
+"number-of-votes" => result_3.number_of_votes,
+"valid-score" => true
 }}
 ]}

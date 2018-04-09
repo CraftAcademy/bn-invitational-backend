@@ -2,7 +2,7 @@ Feature: Display result on dashboard
 
 Background:
 Given the following athlete exists with these results:
-| name  | score | votes | validscore |
+| name  | score | votes | valid_score |
 | Holger| 5.0   | 5     | true        |
 | Jade  | 10.0  | 3     | false       |
 | Kalle | 7.5   | 6     | true        |

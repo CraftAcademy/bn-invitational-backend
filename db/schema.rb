@@ -80,10 +80,10 @@ ActiveRecord::Schema.define(version: 2018_04_06_135041) do
     t.bigint "athlete_id"
     t.float "score", default: 0.0
     t.float "rating_collection", default: [], array: true
-    t.float "numberofvotes", default: 0.0
+    t.float "number_of_votes", default: 0.0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "validscore", default: false
+    t.boolean "valid_score", default: false
     t.index ["athlete_id"], name: "index_results_on_athlete_id"
   end
 

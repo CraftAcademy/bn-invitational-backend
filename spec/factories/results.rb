@@ -3,6 +3,6 @@ FactoryBot.define do
     athlete nil
     score 0
     rating_collection []
-    numberofvotes 0
+    number_of_votes 0
   end
 end
