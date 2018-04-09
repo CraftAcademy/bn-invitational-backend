@@ -7,5 +7,6 @@
 "home" => "#{athlete.home}",
 "starttime" => athlete.starttime,
 "image" => nil,
-"hasraced" => false
+"hasraced" => false,
+"votingopen" => false
 }}}
