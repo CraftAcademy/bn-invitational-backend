@@ -1,12 +1,7 @@
-<<<<<<< HEAD
-class Api::V1::AthletesController < ApplicationController
-  skip_before_filter :verify_authenticity_token
-=======
 class Api::V1::AthletesController < ApiController
 
->>>>>>> upstream/develop
   before_action :find_athlete_and_result
-  #before_action :authenticate_api_v1_user!, only: [ :destroy, :edit]
+  before_action :authenticate_api_v1_user!, only: [:create, :destroy, :edit]
 
   def index
     render json: @athletes, status: :ok

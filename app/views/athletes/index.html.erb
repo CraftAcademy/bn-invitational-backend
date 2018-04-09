@@ -1,12 +1,15 @@
+
 <h1>Athletes</h1>
 
 <% if @athletes %>
   <ul id="athlete">
     <% @athletes.each do |athlete| %>
       <li>
-        <p><%= athlete.name%></p>
-        <%= link_to 'Open/Close Voting', api_v1_athlete_url(athlete), method: :put, id: 'voting' %>
-        Status: <%= athlete.votingOpen %>
+        <p id="<% athlete.id %>">
+        <%= athlete.name%>
+        </p>
+        <button type="button" value="<% athlete.votingOpen %>" name="button"></button>
+        <p> Status <%= athlete.votingOpen %></p>
       </li>
     <% end %>
   </ul>

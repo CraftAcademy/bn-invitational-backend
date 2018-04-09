@@ -9,13 +9,21 @@ class AthletesController < ApplicationController
     athlete = Athlete.new(athlete_params)
     if athlete.save
       Result.create(athlete: athlete)
-      flash.now[:success] = 'Athlete successfully created'
-      render action: "index"
+      flash[:success] = 'Athlete successfully created'
+       redirect_to root_path
     else
       flash[:error] = athlete.errors.full_messages.first
-      render action: "new"
+      redirect_back(fallback_location: root_path)
     end
   end
+
+  def update
+    binding.pry
+        athlete = Athlete.find(params[:id])
+    athlete.open_or_close_voting
+    redirect_to root_path
+  end
+
 
   private
 

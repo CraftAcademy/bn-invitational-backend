@@ -12,6 +12,5 @@ Given the following athlete exists
   Scenario: Admin open the voting for an athlete
     Given I am on the "Dashboard" page
     Then I should see "Status: false"
-    And show me the page
     When I click "voting" button
     Then I should see "Status: true"
