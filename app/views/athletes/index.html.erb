@@ -15,12 +15,12 @@
 <% if @sorted_results %>
   <% position = 1 %>
   <% @sorted_results.each do |result| %>
-    <% if result.valid_score == true %>
+    <% if result.validscore == true %>
       <p>
       No. <%= position %>
       <%= result.athlete.name %>
       Score: <%= result.score %>,
-      Number of votes: <%= result.number_of_votes %>
+      Number of votes: <%= result.numberofvotes %>
       </p>
       <% position += 1 %>
     <% end %>
@@ -31,11 +31,11 @@
 
 <% if @sorted_results %>
   <% @sorted_results.each do |result| %>
-    <% if result.valid_score == false %>
+    <% if result.validscore == false %>
       <p>
       <%= result.athlete.name %>
       Score: <%= result.score %>,
-       Number of votes: <%= result.number_of_votes %>
+       Number of votes: <%= result.numberofvotes %>
       </p>
     <% end %>
   <% end %>
