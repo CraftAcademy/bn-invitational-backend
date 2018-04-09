@@ -1,9 +1,9 @@
 
 <h1>Athletes</h1>
 
-<% if @athletes %>
+<% if @sorted_athletes %>
   <ul id="athlete">
-    <% @athletes.each do |athlete| %>
+    <% @sorted_athletes.each do |athlete| %>
       <li>
         <p><%= athlete.name%></p>
         <%= form_with url: toggle_voting_path(athlete), method: :put, local: true do |form| %>

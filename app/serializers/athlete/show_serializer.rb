@@ -1,5 +1,9 @@
 class Athlete::ShowSerializer < ActiveModel::Serializer
-  attributes :name, :age, :home, :starttime, :image, :hasraced
+  attributes :name, :age, :home, :starttime, :image, :hasraced, :votingopen
+
+  def votingopen
+    object.votingOpen
+  end
 
   def image
     unless object.image.attachment.nil?

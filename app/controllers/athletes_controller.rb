@@ -2,7 +2,7 @@ class AthletesController < ApplicationController
 
   def index
     sorted_results
-    @athletes = Athlete.all
+    sorted_athletes
   end
 
   def create
@@ -30,6 +30,12 @@ end
     @sorted_results = results.sort_by { |result| result[:score] }.reverse
     @sorted_results.each { |result| result.valid_score = true if result.number_of_votes > 4 }
     @sorted_results
+  end
+
+  def sorted_athletes
+    athletes = Athlete.all
+    @sorted_athletes = athletes.sort_by { |athlete| athlete[:starttime] }
+    @sorted_athletes
   end
 
   def athlete_params
