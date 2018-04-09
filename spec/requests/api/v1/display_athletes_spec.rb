@@ -1,7 +1,9 @@
 
 RSpec.describe Api::V1::AthletesController, type: :request do
   describe 'GET /api/v1/athletes' do
-    let!(:athlete) { create(:athlete) }
+    let!(:athlete) { create(:athlete, starttime: "1200") }
+    let!(:athlete_two) { create(:athlete, name: 'Lara', starttime: "1220") }
+    let!(:athlete_three) { create(:athlete, name: 'Kalle', starttime: "1210") }
     let(:object) { JSON.parse(response.body) }
     before do
   end
