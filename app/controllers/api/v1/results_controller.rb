@@ -1,4 +1,4 @@
-class Api::V1::ResultsController < ApplicationController
+class Api::V1::ResultsController < ApiController
 
   def index
     render json: sorted_results, status: :ok

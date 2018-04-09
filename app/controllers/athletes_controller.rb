@@ -1,4 +1,4 @@
-class AthletesController < ActionController::Base
+class AthletesController < ApplicationController
 
   def index
     sorted_results
