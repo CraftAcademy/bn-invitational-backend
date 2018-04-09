@@ -5,7 +5,7 @@ RSpec.describe Api::V1::ResultsController, type: :request do
     let!(:athlete_3) { create(:athlete, name: 'Kalle') }
     let!(:result) { create( :result, athlete: athlete_2, score: 9.5) }
     let!(:result_2) { create( :result, athlete: athlete, score: 10.0) }
-    let!(:result_3) { create( :result, athlete: athlete_3, score: 5.0, numberofvotes: 5) }
+    let!(:result_3) { create( :result, athlete: athlete_3, score: 5.0, number_of_votes: 5) }
     let(:response_json) { JSON.parse(response.body)}
     let!(:user) { create(:user) }
     let(:credentials) { user.create_new_auth_token }

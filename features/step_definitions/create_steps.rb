@@ -5,7 +5,7 @@ Given("the following athlete exists with these results:") do |table|
     find_athlete = Athlete.find_by(name: athlete[:name])
     create(:result, athlete: find_athlete,
                   score: athlete[:score],
-                  numberofvotes: athlete[:votes],
-                  validscore:athlete[:validscore])
+                  number_of_votes: athlete[:votes],
+                  valid_score:athlete[:valid_score])
   end
 end
