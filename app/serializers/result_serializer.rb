@@ -1,7 +1,7 @@
 class ResultSerializer < ActiveModel::Serializer
-  attributes :id, :athlete_name, :score, :number_of_votes, :valid_score
+  attributes :id, :athletename, :score, :numberofvotes, :valid_score
 
-  def athlete_name
+  def athletename
     athlete = Athlete.find_by(id: object.athlete_id)
     athlete.name
   end
