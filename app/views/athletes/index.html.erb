@@ -7,7 +7,6 @@
       <li>
         <p><%= athlete.name%></p>
         <%= form_with url: toggle_voting_path(athlete), method: :put, local: true do |form| %>
-        
         <%= form.submit value: 'Open/Close Voting', id: 'voting' %>
         <% end %>
         Status: <%= athlete.votingOpen %>
