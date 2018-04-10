@@ -16,7 +16,6 @@ Bundler.require(*Rails.groups)
 module Nbinvitational
   class Application < Rails::Application
     config.load_defaults 5.2
-    config.autoload_paths += %W(#{config.root}/lib)
     config.generators do |generate|
       generate.helper false
       generate.assets false
@@ -37,6 +36,5 @@ module Nbinvitational
       end
     end
     routes.default_url_options[:host] = 'https://votingapi.herokuapp.com'
-    # config.api_only = true
   end
 end

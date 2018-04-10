@@ -6,8 +6,9 @@
     <% @sorted_athletes.each do |athlete| %>
       <li>
         <p><%= athlete.name%></p>
+
         <%= form_with url: toggle_voting_path(athlete), method: :put, local: true do |form| %>
-        <%= form.submit value: 'Open/Close Voting', id: 'voting' %>
+          <%= form.submit value: 'Open/Close Voting', id: 'voting' %>
         <% end %>
         <p>Status: <%= athlete.votingOpen %></p>
         <%= link_to 'Edit', edit_athlete_path(athlete) %>
@@ -19,6 +20,9 @@
 
 <%= link_to 'Create Athlete', new_athlete_path %>
 
+<%= form_with url: publish_path, method: :put, local: true do |form| %>
+  <%= form.submit value: 'Publish Result' %>
+<% end %>
 
 <h3>Results</h3>
 

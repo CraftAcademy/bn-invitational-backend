@@ -1,5 +1,4 @@
 class AthletesController < ApplicationController
-  #Array.include Results
 
   def index
     sorted_results
@@ -33,13 +32,13 @@ class AthletesController < ApplicationController
   end
 
   def update
-    @athlete = Athlete.find_by(id: params[:id])
-    if @athlete.update(athlete_params)
+    athlete = Athlete.find_by(id: params[:id])
+    if athlete.update(athlete_params)
      flash.now[:success] = 'Athlete successfully edited'
-     redirect_to athlete_path(@athlete)
+     redirect_to athlete_path(athlete)
     else
-     flash[:error] = error_message(@athlete)
-     render 'edit'
+     flash[:error] = error_message(athlete)
+     redirect_to edit_athlete_path(athlete)
     end
   end
 
@@ -47,6 +46,16 @@ class AthletesController < ApplicationController
     athlete = Athlete.find(params[:id])
     athlete.open_or_close_voting
     redirect_to root_path
+  end
+
+  def publish
+    if Result.publish_results
+      flash[:success] = 'Result successfully published'
+      redirect_to root_path
+    else
+      flash[:error] = 'You have no results to publish'
+      redirect_to root_path
+    end
   end
 
   private
