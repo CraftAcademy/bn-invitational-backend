@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :athletes, only: [:index, :new, :create]
   put 'toggle/:id', to: 'athletes#toggle', as: :toggle_voting
+  put 'publish', to: 'athletes#publish', as: :publish
 
   namespace :api do
     namespace :v1 do

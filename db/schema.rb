@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_08_163750) do
+ActiveRecord::Schema.define(version: 2018_04_10_104054) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 2018_04_08_163750) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "valid_score", default: false
+    t.boolean "has_raced", default: false
     t.index ["athlete_id"], name: "index_results_on_athlete_id"
   end
 
