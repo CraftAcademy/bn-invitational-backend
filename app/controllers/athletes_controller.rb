@@ -17,7 +17,6 @@ class AthletesController < ApplicationController
     end
   end
 
-
   def toggle
     athlete = Athlete.find(params[:id])
     athlete.open_or_close_voting
@@ -33,6 +32,7 @@ class AthletesController < ApplicationController
       redirect_to root_path
     end
   end
+
   private
 
   def sorted_results
