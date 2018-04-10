@@ -18,12 +18,37 @@ class AthletesController < ApplicationController
     end
   end
 
+  def show
+    @athlete = Athlete.find_by(id: params[:id])
+  end
 
-def toggle
-  athlete = Athlete.find(params[:id])
-  athlete.open_or_close_voting
-  redirect_to root_path
-end
+  def edit
+    @athlete = Athlete.find_by(id: params[:id])
+  end
+
+  def destroy
+    athlete = Athlete.find_by(id: params[:id])
+    athlete.destroy
+    redirect_to root_path
+  end
+
+  def update
+    @athlete = Athlete.find_by(id: params[:id])
+    if @athlete.update(athlete_params)
+     flash.now[:success] = 'Athlete successfully edited'
+     redirect_to athlete_path(@athlete)
+    else
+     flash[:error] = error_message(@athlete)
+     render 'edit'
+    end
+  end
+
+  def toggle
+    athlete = Athlete.find(params[:id])
+    athlete.open_or_close_voting
+    redirect_to root_path
+  end
+
   private
 
   def sorted_results

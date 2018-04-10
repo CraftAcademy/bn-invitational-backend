@@ -28,7 +28,6 @@ RSpec.describe Result, type: :model do
     let(:all_results) { Result.all }
 
     it 'Publish Results - should turn has_raced to true for all' do
-      binding.pry
       Result.publish_results
       all_results.each do |result|
         expect(result.has_raced).to eq true
