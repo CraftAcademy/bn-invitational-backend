@@ -1,5 +1,8 @@
-module NotificationsHandeler
-  def push_notification(title, body)
+module NotificationsHandler
+
+  extend ActiveSupport::Concern
+
+  def push_notification(title)
     params = {"app_id" => Rails.application.credentials.dig(:onesignal, :app_id),
             "headings" => {"en" => "title"},
             "contents" => {"en" => "English Message"},
@@ -11,8 +14,7 @@ module NotificationsHandeler
     request = Net::HTTP::Post.new(uri.path,
                               'Content-Type'  => 'application/json;charset=utf-8',
                               'Authorization' => Rails.application.credentials.dig(:onesignal, :api_key))
-      request.body = params.to_json
-      response = http.request(request)
-      puts response.body
-    end
+    request.body = params.to_json
+    http.request(request)
+  end
 end

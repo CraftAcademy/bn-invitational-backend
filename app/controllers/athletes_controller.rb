@@ -1,5 +1,5 @@
 class AthletesController < ApplicationController
-
+include NotificationsHandler
   def index
     sorted_results
     sorted_athletes
@@ -45,6 +45,7 @@ class AthletesController < ApplicationController
   def toggle
     athlete = Athlete.find(params[:id])
     athlete.open_or_close_voting
+    push_notification(athlete.name)
     redirect_to root_path
   end
 
