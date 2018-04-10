@@ -24,6 +24,16 @@ def toggle
   athlete.open_or_close_voting
   redirect_to root_path
 end
+
+def publish
+  if Result.publish_results
+    flash[:success] = 'Result successfully published'
+    redirect_to root_path
+  else
+    flash[:error] = 'You have no results to publish'
+    redirect_to root_path
+  end
+end
   private
 
   def sorted_results
