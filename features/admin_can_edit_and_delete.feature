@@ -9,7 +9,7 @@ Feature: Admin is able to edit and delete information about athletes
       | Holger | Stockholm| 26  | 1337      |
 
   Scenario: Admin successfully edits an athlete
-    Given I am on the "Holger" page
+    Given I am on the "Dashboard" page
     When I click "Edit" button
     And I fill in "Name" with "David"
     And I fill in "Home" with "Stockholm"
@@ -22,6 +22,6 @@ Feature: Admin is able to edit and delete information about athletes
     And I should see "300"
 
   Scenario: Admin successfully deletes an athlete
-    Given I am on the "Holger" page
-    When I click "Delete Athlete" button
+    Given I am on the "Dashboard" page
+    When I click "Delete" button
     Then I should be on the "Dashboard" page

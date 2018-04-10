@@ -9,7 +9,9 @@
         <%= form_with url: toggle_voting_path(athlete), method: :put, local: true do |form| %>
         <%= form.submit value: 'Open/Close Voting', id: 'voting' %>
         <% end %>
-        Status: <%= athlete.votingOpen %>
+        <p>Status: <%= athlete.votingOpen %></p>
+        <%= link_to 'Edit', edit_athlete_path(athlete) %>
+        <%= link_to 'Delete', athlete_path(athlete), method: :delete %>
       </li>
     <% end %>
   </ul>
