@@ -16,6 +16,7 @@ Bundler.require(*Rails.groups)
 module Nbinvitational
   class Application < Rails::Application
     config.load_defaults 5.2
+    config.autoload_paths += %W(#{config.root}/lib)
     config.generators do |generate|
       generate.helper false
       generate.assets false

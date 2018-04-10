@@ -1,4 +1,5 @@
 class AthletesController < ApplicationController
+  #Array.include Results
 
   def index
     sorted_results
