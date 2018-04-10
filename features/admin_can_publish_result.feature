@@ -13,4 +13,4 @@ Feature: Admin can publish result
 Scenario: Admin clicks publish result
   Given I am on the "Dashboard" page
   When I click "Publish Result" button
-  #Then I should see "Result successfully published"
+  Then I should see "Result successfully published"
