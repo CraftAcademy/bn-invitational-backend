@@ -8,9 +8,11 @@ Background:
   | email             | password   | password_confirmation|
   | admin@example.com | password12 | password12           |
 
-Scenario: Admin visit the site
-Given I am on the "Dashboard" page
-When I fill in "Email" with "admin@example.com"
-And I fill in "Password" with "password12"
-Then I click "Log in" button
-And I should see "Signed in successfully."
+Scenario: Admin can login and out
+  Given I am on the "Dashboard" page
+  When I fill in "Email" with "admin@example.com"
+  And I fill in "Password" with "password12"
+  Then I click "Log in" button
+  And I should see "Signed in successfully."
+  Then I click "Logout" button
+  And I should see "Signed out successfully"
