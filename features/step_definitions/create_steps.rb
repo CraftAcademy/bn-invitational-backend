@@ -9,3 +9,11 @@ Given("the following athlete exists with these results:") do |table|
                   valid_score:athlete[:valid_score])
   end
 end
+
+Given("the following user exist:") do |table|
+  table.hashes.each do |user|
+    create(:user, email: user[:email],
+                  password: user[:password],
+                  password_confirmation: user[:password_confirmation])
+  end
+end

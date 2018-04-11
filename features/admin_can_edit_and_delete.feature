@@ -8,6 +8,12 @@ Feature: Admin is able to edit and delete information about athletes
       | name   | home     | age | starttime |
       | Holger | Stockholm| 26  | 1337      |
 
+    And the following user exist:
+      | email             | password   | password_confirmation|
+      | admin@exampel.com | password12 | password12           |
+
+    And I am logged in as "admin@exampel.com"
+
   Scenario: Admin successfully edits an athlete
     Given I am on the "Dashboard" page
     When I click "Edit" button
