@@ -3,6 +3,12 @@ Feature: Admin is able to create a new athlete
   In order to have athletes in my competition
   I would like to be able to create athletes
 
+  Background:
+    Given the following user exist:
+    | email             | password   | password_confirmation|
+    | admin@exampel.com | password12 | password12           |
+    And I am logged in as "admin@exampel.com"
+
   Scenario: Admin successfully creates new athlete
     Given I am on the "Dashboard" page
     When I click "Create Athlete" button
