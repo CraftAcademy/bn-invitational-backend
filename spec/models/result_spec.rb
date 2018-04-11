@@ -32,6 +32,13 @@ RSpec.describe Result, type: :model do
       all_results.each do |result|
         expect(result.has_raced).to eq true
       end
-   end
- end
-end
+    end
+      it 'Revert Results - should turn has_raced to false for all' do
+        Result.publish_results
+        Result.revert_results
+        all_results.each do |result|
+          expect(result.has_raced).to eq false
+        end
+      end
+    end
+  end 

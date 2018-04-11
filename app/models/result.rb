@@ -14,4 +14,11 @@ class Result < ApplicationRecord
       result.save
     end
   end
+
+  def self.revert_results
+    all.each do |result|
+      result.has_raced = false
+      result.save
+    end
+  end
 end
