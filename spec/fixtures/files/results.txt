@@ -5,7 +5,8 @@
 "athletename" => "Holger Tidemand",
 "score" => result_2.score,
 "numberofvotes" => result_2.number_of_votes,
-"validscore" => false
+"validscore" => false,
+"hasraced" => false
 }},
 {
 "id" => "#{result.id}",
@@ -14,7 +15,8 @@
 "athletename" => "Lara",
 "score" => result.score,
 "numberofvotes" => result.number_of_votes,
-"validscore" => false
+"validscore" => false,
+"hasraced" => false
 }},
 {
 "id" => "#{result_3.id}",
@@ -23,6 +25,7 @@
 "athletename" => "Kalle",
 "score" => result_3.score,
 "numberofvotes" => result_3.number_of_votes,
-"validscore" => true
+"validscore" => true,
+"hasraced" => false
 }}
 ]}
