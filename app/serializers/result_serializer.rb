@@ -1,5 +1,9 @@
 class ResultSerializer < ActiveModel::Serializer
-  attributes :id, :athletename, :score, :numberofvotes, :validscore
+  attributes :id, :athletename, :score, :numberofvotes, :validscore, :hasraced
+
+  def hasraced
+    object.has_raced
+  end
 
   def athletename
     object.athlete.name
