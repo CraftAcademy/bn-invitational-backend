@@ -28,6 +28,9 @@
 <%= form_with url: publish_path, method: :put, local: true do |form| %>
   <%= form.submit value: 'Publish Result' %>
 <% end %>
+<%= form_with url: revert_results_path, method: :put, local: true do |form| %>
+  <%= form.submit value: 'Revert Result' %>
+<% end %>
 
 <h3>Results</h3>
 
