@@ -5,6 +5,7 @@ ruby '2.3.4'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'aws-sdk-s3', require: false
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'devise'
 gem 'devise_token_auth'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'

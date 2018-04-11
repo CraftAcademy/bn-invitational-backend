@@ -8,6 +8,13 @@ Given the following athlete exists
   | name        | home       | age  | votingOpen |
   | Kalle Tomba | Dagali     | 78   | false      |
 
+And the following user exist:
+  | email             | password   | password_confirmation|
+  | admin@exampel.com | password12 | password12           |
+
+And I am logged in as "admin@exampel.com"
+
+
 Scenario: Admin open the voting for an athlete
   Given I am on the "Dashboard" page
   Then I should see "Status: false"
