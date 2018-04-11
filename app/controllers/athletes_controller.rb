@@ -64,6 +64,16 @@ include NotificationsHandler
     end
   end
 
+  def revert
+    if Result.revert_results
+      flash[:success] = 'Result successfully reverted'
+      redirect_to root_path
+    else
+      flash[:error] = 'You have no results to revert'
+      redirect_to root_path
+    end
+  end
+
   private
 
   def sorted_results

@@ -5,6 +5,7 @@ authenticate :user do
   resources :athletes, shallow: true
   put 'toggle/:id', to: 'athletes#toggle', as: :toggle_voting
   put 'publish', to: 'athletes#publish', as: :publish
+  put 'revert', to: 'athletes#revert', as: :revert_results
 end
   devise_for :users
 
