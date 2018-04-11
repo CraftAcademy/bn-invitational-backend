@@ -43,15 +43,16 @@ include NotificationsHandler
   end
 
   def toggle
-    athlete = Athlete.find(params[:id])
+    athlete = Athlete.find_by(id: params[:id])
     athlete.open_or_close_voting
-    push_notification(athlete)
+    push_notification(params)
     redirect_to root_path
   end
 
   def publish
     if Result.publish_results
       flash[:success] = 'Result successfully published'
+      push_notification(params)
       redirect_to root_path
     else
       flash[:error] = 'You have no results to publish'
