@@ -2,13 +2,15 @@ require 'net/http'
 module NotificationsHandler
   extend ActiveSupport::Concern
 
-  def push_notification(title)
-    params = {"app_id" => Rails.application.credentials.dig(:onesignal, :app_id),
-              "headings" => {"en" => "title"},
-              "contents" => {"en" => "English Message"},
-              "included_segments" => ["All"]}
+  def file_data(name)
+    File.read(Rails.root.to_s + "/app/controllers/concerns/files/#{name}.txt")
+  end
 
-    uri = URI.parse('https://onesignal.com/api/v1/notifications')
+  def push_notification(obj)
+    one_signal_url = 'https://onesignal.com/api/v1/notifications'
+    params = eval(file_data('notifications_params'))
+
+    uri = URI.parse(one_signal_url)
     http = Net::HTTP.new(uri.host, uri.port)
     http.use_ssl = true
 

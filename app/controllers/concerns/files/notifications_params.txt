@@ -1,0 +1,5 @@
+{ "app_id" => Rails.application.credentials.dig(:onesignal, :app_id),
+  "headings" => {"en" => "#{obj.name} has started "},
+  "contents" => {"en" => "Voting Now Open"},
+  "data" => {"id" => "#{obj.id}"},
+  "included_segments" => ["All"]}
