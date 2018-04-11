@@ -49,7 +49,7 @@ include NotificationsHandler
   def toggle
     athlete = Athlete.find_by(id: params[:id])
     athlete.open_or_close_voting
-    push_notification(params)
+    push_notification(params) if athlete.votingOpen == true
     redirect_to root_path
   end
 
