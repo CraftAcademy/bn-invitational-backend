@@ -1,8 +1,13 @@
 class AthletesController < ApplicationController
 
   def index
-    sorted_results
-    sorted_athletes
+    binding.pry
+    if current_user
+      sorted_results
+      sorted_athletes
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def create
