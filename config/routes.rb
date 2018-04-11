@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   root controller: :athletes, action: :index
 
+authenticate :user do
   resources :athletes, shallow: true
   put 'toggle/:id', to: 'athletes#toggle', as: :toggle_voting
   put 'publish', to: 'athletes#publish', as: :publish
-  
+end
   devise_for :users
 
   namespace :api do

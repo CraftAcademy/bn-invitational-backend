@@ -1,7 +1,6 @@
 class AthletesController < ApplicationController
 
   def index
-    binding.pry
     if current_user
       sorted_results
       sorted_athletes

@@ -1,3 +1,8 @@
+<% if current_user %>
+  <%= form_with url: destroy_user_session_path, method: :delete, local: true do |form| %>
+    <%= form.submit value: 'Logout' %>
+  <% end %>
+<% end %>
 
 <h1>Athletes</h1>
 
