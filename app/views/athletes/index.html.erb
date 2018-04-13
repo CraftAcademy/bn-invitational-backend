@@ -7,6 +7,8 @@
   <% end %>
 <% end %>
 
+
+<div class="athlete">
 <h1>Athletes</h1>
 
 <% if @sorted_athletes %>
@@ -34,6 +36,8 @@
 <%= form_with url: revert_results_path, method: :put, local: true do |form| %>
   <%= form.submit value: 'Revert Result' %>
 <% end %>
+
+ </div>
 
 <h3>Results</h3>
 
