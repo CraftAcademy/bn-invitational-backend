@@ -41,4 +41,4 @@ RSpec.describe Result, type: :model do
         end
       end
     end
-  end 
+  end
