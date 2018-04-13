@@ -16,8 +16,11 @@
           <%= form.submit value: 'Open/Close Voting', id: 'voting' %>
         <% end %>
         <p>Status: <%= athlete.votingOpen %></p>
-        <%= link_to 'Edit', edit_athlete_path(athlete) %>
-        <%= link_to 'Delete', athlete_path(athlete), method: :delete %>
+        <%= link_to 'Edit', edit_athlete_path(athlete)  %>
+
+        <%= form_with url: athlete_path(athlete), method: :delete, local: true do |form| %>
+          <%= form.submit value: 'Delete' %>
+        <% end %>
       </li>
     <% end %>
   </ul>

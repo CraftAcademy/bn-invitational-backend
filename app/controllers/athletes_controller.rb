@@ -30,7 +30,7 @@ include NotificationsHandler
   end
 
   def destroy
-    athlete = Athlete.find_by(id: params[:id])
+    athlete = Result.find_by(athlete_id: params[:id])
     athlete.destroy
     redirect_to root_path
   end
