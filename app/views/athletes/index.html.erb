@@ -1,7 +1,7 @@
 <%= stylesheet_link_tag    "application", :media => "all" %>
 <%= javascript_include_tag "application" %>
-<% if current_user %>
 
+<% if current_user %>
   <%= form_with url: destroy_user_session_path, method: :delete, local: true do |form| %>
     <%= form.submit value: 'Logout' %>
   <% end %>
