@@ -1,5 +1,5 @@
 class Result < ApplicationRecord
-  belongs_to :athlete
+  belongs_to :athlete, dependent: :destroy
 
   def updated_votes(params)
     self.rating_collection << params[:vote].to_i

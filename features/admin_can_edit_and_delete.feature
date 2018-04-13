@@ -4,9 +4,9 @@ Feature: Admin is able to edit and delete information about athletes
   I should be able to edit and delete athletes
 
   Background:
-    Given the following athlete exists
-      | name   | home     | age | starttime |
-      | Holger | Stockholm| 26  | 1337      |
+    Given the following athlete exists with these results:
+      | name  | score | votes | valid_score | home      | age | starttime |
+      | Holger| 5.0   | 5     | true        | Stockholm | 26  | 1337      |
 
     And the following user exist:
       | email             | password   | password_confirmation|
