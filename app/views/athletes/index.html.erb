@@ -18,59 +18,62 @@
     <% end %>
 
     <p>Status:<strong><%= athlete.votingOpen %></strong></p>
-    <%= link_to '<button type="button" class="btn btn-success">Edit Athlete</button>'.html_safe, edit_athlete_path(athlete) %>
-    <%= link_to '<button type="button" class="btn btn-danger">Delete</button>'.html_safe, athlete_path(athlete), method: :delete %>
+      <%= link_to '<button type="button" class="btn btn-success">Edit Athlete</button>'.html_safe, edit_athlete_path(athlete) %>
+      <%= form_with url: athlete_path(athlete), method: :delete, local: true do |form| %>
+      <button type="submit" class="btn btn-danger">Delete</button>
     <p></p>
+    <% end %>
   <% end %>
 <% end %>
 </div>
 
 <div class="results">
-<h3 id="results">Results</h3>
-<%= form_with url: publish_path, method: :put, local: true do |form| %>
-<%= form.submit value: 'Publish Result' %>
-<% end %>
-<p></p>
-<%= form_with url: revert_results_path, method: :put, local: true do |form| %>
-<%= form.submit value: 'Revert Result' %>
-<% end %>
-<p></p>
-<h3>Result List</h3>
-<% if @sorted_results %>
-<% position = 1 %>
-<% @sorted_results.each do |result| %>
-  <% if result.valid_score == true %>
-    <h5>
-      No.
-      <%= position %></>
-    <%= result.athlete.name %>
-  </h5>
-  <p>
-    Score:
-    <strong><%= result.score %>,</strong>
-    Number of votes:
-    <strong><%= result.number_of_votes %></strong>
-    <% position += 1 %>
-    </p>
+  <h3 id="results">Results</h3>
+    <%= form_with url: publish_path, method: :put, local: true do |form| %>
+    <%= form.submit value: 'Publish Result' %>
   <% end %>
-<% end %>
-<% end %>
+  <p></p>
+    <%= form_with url: revert_results_path, method: :put, local: true do |form| %>
+    <%= form.submit value: 'Revert Result' %>
+  <% end %>
+  <p></p>
 
-<h3 id="insufficient_votes">Insufficient votes</h3>
-
-<% if @sorted_results %>
-<% @sorted_results.each do |result| %>
-  <% if result.valid_score == false %>
+  <h3>Result List</h3>
+  <% if @sorted_results %>
+  <% position = 1 %>
+  <% @sorted_results.each do |result| %>
+    <% if result.valid_score == true %>
       <h5>
-        <%= result.athlete.name %>
-      </h5>
-      <p>
-        Score:
-        <strong><%= result.score %>,</strong>
-        Number of votes:
-        <strong><%= result.number_of_votes %></strong>
-      <p/>
+        No.
+        <%= position %></>
+      <%= result.athlete.name %>
+    </h5>
+    <p>
+      Score:
+      <strong><%= result.score %>,</strong>
+      Number of votes:
+      <strong><%= result.number_of_votes %></strong>
+      <% position += 1 %>
+      </p>
     <% end %>
   <% end %>
-<% end %>
+  <% end %>
+
+  <h3 id="insufficient_votes">Insufficient votes</h3>
+
+  <% if @sorted_results %>
+  <% @sorted_results.each do |result| %>
+    <% if result.valid_score == false %>
+        <h5>
+          <%= result.athlete.name %>
+        </h5>
+        <p>
+          Score:
+          <strong><%= result.score %>,</strong>
+          Number of votes:
+          <strong><%= result.number_of_votes %></strong>
+        <p/>
+      <% end %>
+    <% end %>
+  <% end %>
 </div>
