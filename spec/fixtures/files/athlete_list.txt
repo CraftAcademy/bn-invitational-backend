@@ -5,5 +5,24 @@
 "name" => "#{athlete.name}",
 "link" => "https://votingapi.herokuapp.com/api/v1/athletes/#{athlete.id}",
 "home" => "#{athlete.home}",
-"image" => nil
+"image" => nil,
+"starttime" => athlete.starttime
+}},{
+"id" => "#{athlete_three.id}",
+"type" => "athletes",
+"attributes" => {
+"name" => "#{athlete_three.name}",
+"link" => "https://votingapi.herokuapp.com/api/v1/athletes/#{athlete_three.id}",
+"home" => "#{athlete_three.home}",
+"image" => nil,
+"starttime" => athlete_three.starttime
+}},{
+"id" => "#{athlete_two.id}",
+"type" => "athletes",
+"attributes" => {
+"name" => "#{athlete_two.name}",
+"link" => "https://votingapi.herokuapp.com/api/v1/athletes/#{athlete_two.id}",
+"home" => "#{athlete_two.home}",
+"image" => nil,
+"starttime" => athlete_two.starttime
 }}]}

@@ -1,0 +1,11 @@
+<h1> <%= @athlete.name %> </h1>
+
+<% if @athlete.image.attachment %>
+  <%= image_tag @athlete.image, width: '250' %>
+<% end %>
+<p> Home Range: <%= @athlete.home %> </p>
+<p> Age: <%= @athlete.age %> </p>
+<p> Race Time: <%= @athlete.starttime %> </p>
+
+<%= link_to 'Edit', edit_athlete_path(@athlete) %>
+<%= link_to 'Delete Athlete', athlete_path(@athlete), method: :delete %>

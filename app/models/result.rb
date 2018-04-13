@@ -7,4 +7,18 @@ class Result < ApplicationRecord
     self.number_of_votes = self.rating_collection.length
     self.save
   end
+
+  def self.publish_results
+    all.each do |result|
+      result.has_raced = true
+      result.save
+    end
+  end
+
+  def self.revert_results
+    all.each do |result|
+      result.has_raced = false
+      result.save
+    end
+  end
 end

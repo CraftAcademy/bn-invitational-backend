@@ -312,6 +312,7 @@ DEPENDENCIES
   coveralls
   cucumber-rails
   database_cleaner
+  devise
   devise_token_auth
   factory_bot_rails
   jquery-rails

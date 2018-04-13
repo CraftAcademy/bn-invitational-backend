@@ -27,4 +27,12 @@ RSpec.describe Athlete, type: :model do
       expect(subject.image).to be_attached
     end
   end
+describe 'class methods: open or close voting' do
+  let!(:athlete){create(:athlete, votingOpen: false)}
+  it 'should open vote' do
+    athlete.open_or_close_voting
+    expect(athlete.votingOpen).to eq true
+  end
+end
+
 end

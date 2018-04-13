@@ -1,7 +1,39 @@
 <%= stylesheet_link_tag    "application", :media => "all" %>
 <%= javascript_include_tag "application" %>
+<% if current_user %>
+
+  <%= form_with url: destroy_user_session_path, method: :delete, local: true do |form| %>
+    <%= form.submit value: 'Logout' %>
+  <% end %>
+<% end %>
+
+<h1>Athletes</h1>
+
+<% if @sorted_athletes %>
+  <ul id="athlete">
+    <% @sorted_athletes.each do |athlete| %>
+      <li>
+        <p><%= athlete.name%></p>
+
+        <%= form_with url: toggle_voting_path(athlete), method: :put, local: true do |form| %>
+          <%= form.submit value: 'Open/Close Voting', id: 'voting' %>
+        <% end %>
+        <p>Status: <%= athlete.votingOpen %></p>
+        <%= link_to 'Edit', edit_athlete_path(athlete) %>
+        <%= link_to 'Delete', athlete_path(athlete), method: :delete %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
 
 <%= link_to 'Create Athlete', new_athlete_path %>
+
+<%= form_with url: publish_path, method: :put, local: true do |form| %>
+  <%= form.submit value: 'Publish Result' %>
+<% end %>
+<%= form_with url: revert_results_path, method: :put, local: true do |form| %>
+  <%= form.submit value: 'Revert Result' %>
+<% end %>
 
 <h3>Results</h3>
 

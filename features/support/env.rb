@@ -16,5 +16,9 @@ end
 
 Cucumber::Rails::Database.javascript_strategy = :truncation
 
-Warden.test_mode!
-After { Warden.test_reset! }
+Before do
+  Warden.test_mode!
+end
+After do
+  Warden.test_reset!
+end

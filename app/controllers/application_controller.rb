@@ -1,4 +1,4 @@
-class ApplicationController < ActionController::API
-  include DeviseTokenAuth::Concerns::SetUserByToken
-  layout "application"
+class ApplicationController < ActionController::Base
+  skip_before_action :verify_authenticity_token
+    layout "application"
 end

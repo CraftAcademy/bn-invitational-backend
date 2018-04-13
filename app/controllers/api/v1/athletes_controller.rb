@@ -1,10 +1,11 @@
-class Api::V1::AthletesController < ApplicationController
+class Api::V1::AthletesController < ApiController
 
   before_action :find_athlete_and_result
   before_action :authenticate_api_v1_user!, only: [:create, :destroy, :edit]
 
   def index
-    render json: @athletes, status: :ok
+    sorted_athletes
+    render json: @sorted_athletes, status: :ok
   end
 
   def show
@@ -41,8 +42,13 @@ class Api::V1::AthletesController < ApplicationController
     params.permit(:name, :age, :home)
   end
 
+  def sorted_athletes
+    athletes = Athlete.all
+    @sorted_athletes = athletes.sort_by { |athlete| athlete[:starttime] }
+    @sorted_athletes
+  end
+
   def find_athlete_and_result
-    @athletes = Athlete.all
     @athlete = Athlete.find_by(id: params[:id])
     @result = Result.find_by(athlete: params[:id])
   end
