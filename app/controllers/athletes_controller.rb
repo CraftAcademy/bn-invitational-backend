@@ -55,6 +55,7 @@ include NotificationsHandler
 
   def publish
     if Result.publish_results
+      Athlete.all_has_raced
       flash[:success] = 'Result successfully published'
       push_notification(params)
       redirect_to root_path
@@ -66,6 +67,7 @@ include NotificationsHandler
 
   def revert
     if Result.revert_results
+      Athlete.all_has_not_raced
       flash[:success] = 'Result successfully reverted'
       redirect_to root_path
     else
