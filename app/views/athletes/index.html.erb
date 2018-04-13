@@ -9,7 +9,7 @@
 
 
 <div class="athlete">
-<h1>Athletes</h1>
+<h1 id="athletes_section">Athletes</h1>
 
 <% if @sorted_athletes %>
   <ul id="athlete">
@@ -39,7 +39,7 @@
 
  </div>
 
-<h3>Results</h3>
+<h3 id="results">Results</h3>
 
 <% if @sorted_results %>
   <% position = 1 %>
@@ -56,7 +56,7 @@
   <% end %>
 <% end %>
 
-<h3>Insufficient votes</h3>
+<h3 id="insufficient_votes">Insufficient votes</h3>
 
 <% if @sorted_results %>
   <% @sorted_results.each do |result| %>
