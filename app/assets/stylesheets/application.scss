@@ -18,13 +18,20 @@
 
  .athlete{
    margin-left: 5%;
-   margin-top: 5%;
+   margin-top: 1%;
  }
+
+ .form{
+    margin-left: 5%;
+}
+
 
  .nav {
     background-color:#00948d ;
     height: 10%;
+    margin-bottom: 3%;
 }
+
 
 ul.nav a:hover {
     color: #fff !important;
@@ -32,4 +39,7 @@ ul.nav a:hover {
 
 ul.nav a{
    color: #fff !important;
+}
+.results{
+   margin-left: 5%;
 }
