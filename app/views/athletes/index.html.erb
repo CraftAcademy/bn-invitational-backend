@@ -5,7 +5,7 @@
 
   <h3 id="athletes_section">Athletes</h3>
 
-  <%= link_to '<button type="button" class="btn btn-info">New Athlete</button>'.html_safe, new_athlete_path %>
+  <%= link_to 'New Athlete', new_athlete_path, class:"btn btn-info" %>
 
   <p></p>
   <% if @sorted_athletes %>
@@ -17,8 +17,8 @@
       <%= form.submit value: 'Open/Close Voting', id: 'voting' %>
     <% end %>
 
-    <p>Status:<strong><%= athlete.votingOpen %></strong></p>
-      <%= link_to '<button type="button" class="btn btn-success">Edit Athlete</button>'.html_safe, edit_athlete_path(athlete) %>
+    <p>Status: <strong><%= athlete.votingOpen %></strong></p>
+      <%= link_to 'Edit Athlete', edit_athlete_path(athlete), class: "btn btn-success" %>
       <%= form_with url: athlete_path(athlete), method: :delete, local: true do |form| %>
       <button type="submit" class="btn btn-danger">Delete</button>
     <p></p>
@@ -45,7 +45,7 @@
     <% if result.valid_score == true %>
       <h5>
         No.
-        <%= position %></>
+        <%= position %>
       <%= result.athlete.name %>
     </h5>
     <p>
