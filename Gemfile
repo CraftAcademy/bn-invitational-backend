@@ -17,7 +17,6 @@ gem 'sass-rails', '~> 5.0'
 gem 'turbolinks'
 gem 'uglifier', '>= 2.7.2'
 
-
 group :development, :test do
   gem 'coveralls', require: false
   gem 'cucumber-rails', require: false

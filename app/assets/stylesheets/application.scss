@@ -13,33 +13,31 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap";
 
- @import "bootstrap";
-
- .athlete{
-   margin-left: 5%;
-   margin-top: 1%;
- }
-
- .form{
-    margin-left: 5%;
+.athlete {
+  margin-left: 5%;
+  margin-top: 1%;
 }
 
-
- .nav {
-    background-color:#00948d ;
-    height: 10%;
-    margin-bottom: 3%;
+.form {
+  margin-left: 5%;
 }
 
+.nav {
+  background-color: #00948d;
+  height: 10%;
+  margin-bottom: 3%;
+}
 
 ul.nav a:hover {
-    color: #fff !important;
+  color: #fff !important;
 }
 
-ul.nav a{
-   color: #fff !important;
+ul.nav a {
+  color: #fff !important;
 }
-.results{
-   margin-left: 5%;
+
+.results {
+  margin-left: 5%;
 }
