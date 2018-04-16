@@ -11,7 +11,7 @@ Feature: Admin is able to create a new athlete
 
   Scenario: Admin successfully creates new athlete
     Given I am on the "Dashboard" page
-    When I click "Create Athlete" button
+    When I click "New Athlete" button
     Then I should be on the "Create Athlete" page
     When I fill in "Name" with "Holger"
     And I fill in "Home" with "Göteborg"
@@ -22,7 +22,7 @@ Feature: Admin is able to create a new athlete
 
     Scenario: Admin successfully creates new athlete
       Given I am on the "Dashboard" page
-      When I click "Create Athlete" button
+      When I click "New Athlete" button
       Then I should be on the "Create Athlete" page
       When I fill in "Name" with "Holger"
       And I fill in "Home" with "Göteborg"
