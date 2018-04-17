@@ -76,6 +76,12 @@ include NotificationsHandler
     end
   end
 
+  def custom_push_notification
+    flash[:success] = 'Push notification successfully sent' if push_notification(params)
+    redirect_to root_path
+  end
+
+
   private
 
   def sorted_results
