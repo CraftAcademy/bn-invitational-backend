@@ -6,6 +6,7 @@ authenticate :user do
   put 'toggle/:id', to: 'athletes#toggle', as: :toggle_voting
   put 'publish', to: 'athletes#publish', as: :publish
   put 'revert', to: 'athletes#revert', as: :revert_results
+  post 'push', to: 'athletes#push', as: :push_notification
 end
   devise_for :users
 
