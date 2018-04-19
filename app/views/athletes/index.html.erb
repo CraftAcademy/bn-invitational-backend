@@ -30,7 +30,7 @@
       <%= link_to 'Edit Athlete', edit_athlete_path(athlete), class: "btn btn-secondary" %>
 
       <%= form_with url: athlete_path(athlete), method: :delete, local: true do |form| %>
-      <%= form.submit value: 'Delete', id: 'voting', class: "btn btn-secondary" %>
+      <%= form.submit value: 'Delete', class: "btn btn-secondary" %>
     <% end %>
   </li>
   </div>
