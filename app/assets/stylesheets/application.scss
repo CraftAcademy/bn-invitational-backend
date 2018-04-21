@@ -15,15 +15,7 @@
  */
 @import "bootstrap";
 
-.athlete {
-  margin-left: 5%;
-  margin-top: 1%;
-}
-
-.form {
-  margin-left: 5%;
-}
-
+//Navbar
 .nav {
   background-color: #00948d;
   height: 10%;
@@ -38,6 +30,60 @@ ul.nav a {
   color: #fff !important;
 }
 
-.results {
-  margin-left: 5%;
+//Controllers
+
+.btn.ctrl {
+  width: 210px;
+}
+
+// Athlete List
+
+.section {
+    margin: 15px;
+}
+
+.list-group-item {
+  width: 215px;
+}
+
+.btn {
+  width: 165px;
+  margin: 5px;
+}
+
+
+@media (min-width: 767.98px){
+
+  .section {
+      text-align: center;
+      margin: 15px;
+  }
+
+  .result {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .insufficient-votes {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  // Athlete List
+
+  .athlete {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  //Controllers
+  .controllers {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    margin-bottom: 50px;
+  }
 }

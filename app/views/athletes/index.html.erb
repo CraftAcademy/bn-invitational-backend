@@ -1,77 +1,89 @@
 <%= stylesheet_link_tag "application", :media => "all" %>
 <%= javascript_include_tag "application" %>
 
-<div class="athlete">
-  <h3 id="athletes_section">Athletes</h3>
-  <%= link_to 'New Athlete', new_athlete_path, class:"btn btn-info" %>
-  <br/>
-
-  <% if @sorted_athletes %>
-    <% @sorted_athletes.each do |athlete| %>
-      <h5><%= athlete.name%></h5>
-      <%= form_with url: toggle_voting_path(athlete), method: :put, local: true do |form| %>
-      <%= form.submit value: 'Open/Close Voting', id: 'voting' %>
-    <% end %>
-
-    <p>Status:
-      <strong><%= athlete.votingOpen %></strong>
-    </p>
-    <%= link_to 'Edit Athlete', edit_athlete_path(athlete), class: "btn btn-success" %>
-    <%= form_with url: athlete_path(athlete), method: :delete, local: true do |form| %>
-    <button type="submit" class="btn btn-danger">Delete</button>
-    <br/>
+<div class="container">
+  <div class="controllers">
+    <%= form_with url: publish_path, method: :put, local: true do |form| %>
+    <%= form.submit value: 'Publish Result', class:"btn btn-info ctrl" %>
   <% end %>
+  <%= form_with url: revert_results_path, method: :put, local: true do |form| %>
+  <%= form.submit value: 'Revert Result', class:"btn btn-info ctrl" %>
 <% end %>
-<% end %>
+<%= link_to 'New Athlete', new_athlete_path, class:"btn btn-info ctrl" %>
 </div>
 
-<div class="results">
-<h3 id="results">Results</h3>
-<%= form_with url: publish_path, method: :put, local: true do |form| %>
-<%= form.submit value: 'Publish Result' %>
-<% end %>
-<br/>
-<%= form_with url: revert_results_path, method: :put, local: true do |form| %>
-<%= form.submit value: 'Revert Result' %>
-<% end %>
-<br/>
+<h1 class="section">Athletes</h1>
 
-<h3>Result List</h3>
+<% if @sorted_athletes %>
+<ul class="list-group athlete">
+  <% @sorted_athletes.each do |athlete| %>
+    <div>
+      <li class="list-group-item m-2">
+        <h5><%= athlete.name %></h5>
+        <div>Voting open:
+          <strong><%= athlete.votingOpen %></strong>
+        </div>
+
+        <%= form_with url: toggle_voting_path(athlete), method: :put, local: true do |form| %>
+        <%= form.submit value: 'Open/Close Voting', id: 'voting', class: 'btn btn-info' %>
+      <% end %>
+
+      <%= link_to 'Edit Athlete', edit_athlete_path(athlete), class: "btn btn-secondary" %>
+
+      <%= form_with url: athlete_path(athlete), method: :delete, local: true do |form| %>
+      <%= form.submit value: 'Delete', class: "btn btn-secondary" %>
+    <% end %>
+  </li>
+div<% end %>
+</ul>
+<% end %>
+
+<h1 class="section">Results</h1>
+<br/>
 <% if @sorted_results %>
 <% position = 1 %>
+<ul class="list-group results">
 <% @sorted_results.each do |result| %>
-<% if result.valid_score == true %>
-  <h5>
-    No.
-    <%= position %>
-    <%= result.athlete.name %>
-  </h5>
-  <p>
-    Score:
-    <strong><%= result.score %>,</strong>
-    Number of votes:
-    <strong><%= result.number_of_votes %></strong>
-    <% position += 1 %>
-    </p>
+  <% if result.valid_score == true %>
+    <div>
+      <li class="list-group-item m-2">
+        <h5>
+          No.
+          <%= position %>
+          <%= result.athlete.name %>
+        </h5>
+        <div>Score:
+          <strong><%= result.score %></strong>
+        </div>
+        <div>Number of votes:
+          <strong><%= result.number_of_votes %></strong>
+        </div>
+      </li>
+    </div>
+    <% position += 1 %><% end %>
   <% end %>
+</ul>
 <% end %>
-<% end %>
-
-<h3 id="insufficient_votes">Insufficient votes</h3>
+<h1 class="section">Insufficient votes</h1>
 
 <% if @sorted_results %>
-<% @sorted_results.each do |result| %>
-  <% if result.valid_score == false %>
-    <h5>
-      <%= result.athlete.name %>
-    </h5>
-    <p>
-      Score:
-      <strong><%= result.score %>,</strong>
-      Number of votes:
-      <strong><%= result.number_of_votes %></strong>
-      <p/>
+<ul class="list-group insufficient-votes">
+  <% @sorted_results.each do |result| %>
+    <% if result.valid_score == false %>
+      <div>
+        <li class="list-group-item m-2">
+          <h5>
+            <%= result.athlete.name %>
+          </h5>
+          <div>Score:
+            <strong><%= result.score %></strong>
+          </div>
+          <div>Number of votes:
+            <strong><%= result.number_of_votes %></strong>
+          </div>
+        </li>
+      </div>
     <% end %>
   <% end %>
+</ul>
 <% end %>
-</div>

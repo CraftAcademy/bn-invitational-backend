@@ -17,6 +17,6 @@ And I am logged in as "admin@exampel.com"
 
 Scenario: Admin open the voting for an athlete
   Given I am on the "Dashboard" page
-  Then I should see "Status: false"
+  Then I should see "Voting open: false"
   When I click "voting" button
-  Then I should see "Status: true"
+  Then I should see "Voting open: true"
