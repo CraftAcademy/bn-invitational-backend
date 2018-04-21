@@ -59,15 +59,15 @@ ul.nav a {
       margin: 15px;
   }
 
-  .result {
+  .results {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
   }
 
   .insufficient-votes {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
   }
 
