@@ -47,7 +47,7 @@
 <% @sorted_results.each do |result| %>
   <% if result.valid_score == true %>
     <div>
-      <li class="list-group-item m-2">
+      <li class="list-group-item m-2" style="width: 325px">
         <h5>
           No.
           <%= position %>
@@ -73,7 +73,7 @@
   <% @sorted_results.each do |result| %>
     <% if result.valid_score == false %>
       <div>
-        <li class="list-group-item m-2">
+        <li class="list-group-item m-2" style="width: 325px">
           <h5>
             <%= result.athlete.name %>
           </h5>
