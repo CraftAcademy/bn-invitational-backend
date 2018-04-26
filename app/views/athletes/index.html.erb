@@ -1,6 +1,7 @@
 <%= stylesheet_link_tag "application", :media => "all" %>
 <%= javascript_include_tag "application" %>
 
+
 <div class="container">
   <div class="controllers">
     <%= form_with url: publish_path, method: :put, local: true do |form| %>
@@ -11,6 +12,16 @@
 <% end %>
 <%= link_to 'New Athlete', new_athlete_path, class:"btn btn-info ctrl" %>
 </div>
+
+<h1>Custom Push Notitification</h1>
+
+<%= form_with url: push_notification_path, class:'form-group', method: :post, local: true do |form| %>
+  <%= form.label :title %>
+  <%= form.text_field :title, class:'form-control', style: 'width: 300px' %>
+  <%= form.label :content %>
+  <%= form.text_field :content, class:'form-control', style: 'width: 300px'  %>
+  <%= form.submit value: 'Send Notification', class: 'btn btn-info mt-3' %>
+<% end %>
 
 <h1 class="section">Athletes</h1>
 

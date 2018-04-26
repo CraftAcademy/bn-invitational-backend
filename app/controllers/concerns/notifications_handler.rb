@@ -7,7 +7,9 @@ module NotificationsHandler
   end
 
   def push_notification(params)
-    if params[:action] == "toggle"
+    if params[:action] == 'custom_push_notification'
+      params = eval(file_data('custom_message'))
+    elsif params[:action] == 'toggle'
       obj = Athlete.find_by(id: params[:id])
       params = eval(file_data('voting_params'))
     else

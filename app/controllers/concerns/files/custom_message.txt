@@ -1,0 +1,4 @@
+{ "app_id" => Rails.application.credentials.dig(:onesignal, :app_id),
+  "headings" => {"en" => params[:title]},
+  "contents" => {"en" => params[:content]},
+  "included_segments" => ["All"]}
